@@ -1,0 +1,4 @@
+interface:
+  display_name: "Subagent Delegation"
+  short_description: "Plan and safely delegate bounded work"
+  default_prompt: "Use $subagent-delegation to divide this task into independent, verifiable subagent work."

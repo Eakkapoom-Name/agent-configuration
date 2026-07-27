@@ -1,0 +1,4 @@
+interface:
+  display_name: "Secret Scan"
+  short_description: "Find exposed credentials without leaking values"
+  default_prompt: "Use $hardcode-secret to scan this code for hardcoded secrets."

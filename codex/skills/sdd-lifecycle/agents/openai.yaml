@@ -1,0 +1,4 @@
+interface:
+  display_name: "SDD Lifecycle"
+  short_description: "Run spec-driven development stages"
+  default_prompt: "Use $sdd-lifecycle to select and run the appropriate SDD stage for this task."

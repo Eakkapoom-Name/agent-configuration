@@ -1,0 +1,4 @@
+interface:
+  display_name: "Why Verify Facts"
+  short_description: "Explain why live fact checks matter"
+  default_prompt: "Use $verifying-facts-anecdote to explain why this claim needs verification."

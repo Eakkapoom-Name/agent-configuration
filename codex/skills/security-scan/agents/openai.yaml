@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Scan"
+  short_description: "Scan code for common security flaws"
+  default_prompt: "Use $security-scan to scan this code for security issues."

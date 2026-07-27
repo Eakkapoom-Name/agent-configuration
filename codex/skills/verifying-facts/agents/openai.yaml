@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verifying Facts"
+  short_description: "Verify changeable claims before answering"
+  default_prompt: "Use $verifying-facts to verify the factual claims needed for this answer."
