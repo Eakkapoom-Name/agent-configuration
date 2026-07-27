@@ -21,7 +21,6 @@ Shared AI agent configuration (rules, skills) for multiple coding assistants.
 
 .codex/
 ├── AGENTS.md
-├── RTK.md
 ├── hooks.json
 └── skills/
     ├── hardcode-secret/
