@@ -35,7 +35,7 @@ It does NOT include anything project-level or significant refactoring. Multi-fil
 
 ### SDD Workflow & Grilling Selection
 Refer to rule file:
-@/home/toaster/.gemini/sdd_workflow.md
+@/home/<user-system-name>/.gemini/sdd_workflow.md
 
 ### Caveman Mode (Always On)
 Always start new sessions in Caveman Full mode.
