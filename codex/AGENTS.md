@@ -1,4 +1,4 @@
-@/home/toaster/.codex/RTK.md
+@/home/<user-system-name>/.codex/RTK.md
 
 <goldenrule>
 1. Never run `git reset --hard`, `git checkout .`, `git restore .`, or `git clean -fd`.
