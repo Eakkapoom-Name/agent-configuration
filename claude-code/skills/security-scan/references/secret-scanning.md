@@ -1,14 +1,4 @@
----
-name: hardcode-secret
-description: |
-  Internal helper for leaked-credential checks (API keys, tokens, passwords),
-  invoked only by security-scan as step 3 of its checklist. Do not invoke
-  this skill directly for any secret/credential-scanning request, including
-  standalone ones; always trigger security-scan first and let it delegate
-  here.
----
-
-# Secret Scanning Without Leaking Secrets
+# Secret Scanning Without Leaking Secrets (item 3 detail)
 
 Confirm nothing sensitive leaked, without displaying the sensitive content
 in the process. A naive `grep` that prints matched lines can itself leak

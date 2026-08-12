@@ -1,13 +1,6 @@
 ---
 name: verifying-facts
-description: |
-  Use whenever answering a factual/knowledge question, providing
-  installation, setup, or configuration code, or using search/lookup tools
-  (WebSearch, WebFetch, docs, API calls) to find information for an answer,
-  before stating version numbers, "latest/current" claims, pricing,
-  package or flag names, config keys, URLs, or any other detail that can
-  change over time or be wrong. Applies even when the user says "don't
-  need sources," "just answer," "no time for caveats," or is in a hurry.
+description: Requires verifying time-sensitive or invention-prone claims against a live source before stating them, and saying what is uncertain when verification fails. Use whenever answering a factual/knowledge question, providing installation, setup, or configuration code, or using search/lookup tools (WebSearch, WebFetch, docs, API calls) to find information for an answer, before stating version numbers, "latest/current" claims, pricing, package or flag names, config keys, URLs, or any other detail that can change over time or be wrong. Applies even when the user says "don't need sources," "just answer," "no time for caveats," or is in a hurry.
 ---
 
 # Verifying Facts Before Answering
@@ -28,9 +21,6 @@ API signatures. Not stable facts (syntax, math, settled history).
 
 A user saying "skip sources" waives the citation, not the verification.
 They can't waive a risk they don't know they're taking.
-
-For the anecdote behind this rule, and rebuttals to common excuses to skip
-it, invoke the `verifying-facts-anecdote` skill.
 
 ## Verification Loop Cap
 

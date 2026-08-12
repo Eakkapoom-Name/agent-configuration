@@ -1,7 +1,9 @@
 ---
 name: subagent-delegation
-description: Use when dispatching to subagents or delegating work, which global agent (researcher/builder/verifier) or built-in Explore agent fits the task, and the plan-delegate-verify flow.
+description: Describes the global subagents in ~/.claude/agents/ (researcher, builder, verifier), the built-in Explore agent, and the plan-delegate-verify flow between them. Use when dispatching work to subagents, delegating a task, or choosing which agent fits the work.
 ---
+
+# Subagent Delegation
 
 ## Workflow
 

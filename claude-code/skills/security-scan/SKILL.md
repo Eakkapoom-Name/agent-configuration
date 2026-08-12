@@ -1,18 +1,6 @@
 ---
 name: security-scan
-description: |
-  Run this fixed 10-item vulnerability checklist (OWASP Top 10 / CWE style)
-  whenever reviewing, auditing, or scanning code for security issues: PR
-  reviews, pre-merge checks, "is this secure", "check for vulnerabilities",
-  "security audit this file/diff/PR", "does this look safe to ship", or any
-  request to look over code that mentions security, safety, or
-  vulnerabilities. Use this even if the user doesn't name the checklist or
-  ask for it by name, treat "review this for security issues" as an
-  automatic trigger. Covers: SQL injection, exposed debug endpoints,
-  hardcoded secrets, missing auth, ReDoS, stored XSS, error info leaks,
-  missing input validation, missing enum validation, plaintext passwords.
-  For the hardcoded-secrets check this skill delegates to the
-  hardcode-secret skill rather than duplicating it, don't confuse the two.
+description: Runs a fixed 10-item vulnerability checklist (OWASP Top 10 / CWE style) against the code in scope and reports findings ranked by severity. Use whenever reviewing, auditing, or scanning code for security issues, including PR reviews, pre-merge checks, "is this secure", "check for vulnerabilities", "security audit this file/diff/PR", "does this look safe to ship", or any request to look over code that mentions security, safety, or vulnerabilities. Use this even if the user doesn't name the checklist or ask for it by name, treat "review this for security issues" as an automatic trigger. Covers SQL injection, exposed debug endpoints, hardcoded secrets, missing auth, ReDoS, stored XSS, error info leaks, missing input validation, missing enum validation, plaintext passwords. Also the entry point for standalone secret/credential-scanning requests, see references/secret-scanning.md for item 3's leak-safe scan method.
 ---
 
 # Security Scan: 10-Item Checklist
@@ -25,7 +13,7 @@ the current branch's changes if nothing specific was named).
 |---|---|---|---|
 | 1 | SQL injection | Critical | User input concatenated into a query instead of a parameterized/prepared statement |
 | 2 | Debug endpoint in production | Critical | `/debug`, `/__debug__`, admin/test routes with no prod guard |
-| 3 | Hardcoded secrets | High | **Delegate.** Invoke `hardcode-secret`; fold its verdict in, don't grep here. |
+| 3 | Hardcoded secrets | High | Scan without leaking. See [references/secret-scanning.md](references/secret-scanning.md) for the leak-safe method (count-only/existence-check greps, never print raw matches). |
 | 4 | Missing authentication | High | Data-mutating/sensitive-read routes with no auth/session/token check |
 | 5 | Regex injection (ReDoS) | High | User input reaching a catastrophic-backtracking regex (`(a+)+`, `(a*)*`) |
 | 6 | Stored XSS | High | Saved input rendered unescaped in HTML/JS (check write + render paths) |
@@ -38,8 +26,9 @@ the current branch's changes if nothing specific was named).
 
 1. Identify scope: the diff, file(s), or directory the user pointed at.
 2. Walk items 1, 2, 4-10 directly against the code in scope.
-3. For item 3, invoke `hardcode-secret` and use its verdict,
-   don't re-implement secret grepping here.
+3. For item 3, follow the leak-safe method in
+   [references/secret-scanning.md](references/secret-scanning.md), never grep in a mode
+   that echoes matched secret values into the transcript.
 4. Report findings ranked most-severe first (Critical, High, Medium), each
    with a category slug and severity-prefixed summary, e.g.
    `[Critical] Raw SQL string built from req.params.id`. Use the
@@ -65,5 +54,5 @@ the current branch's changes if nothing specific was named).
    that overlaps an item already reported above, don't double-report the
    same issue under two labels.
 
-See `references/remediation.md` for fix guidance per item when a one-line
+See [references/remediation.md](references/remediation.md) for fix guidance per item when a one-line
 recommendation in the finding isn't enough.
