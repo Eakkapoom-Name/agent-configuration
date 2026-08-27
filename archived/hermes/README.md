@@ -7,8 +7,7 @@ Hermes Agent global config (rules, skills, plugins) archived from `~/.hermes/`.
 Global rules file: `hermes/SOUL.md` (always-loaded, every session, any cwd) \
 Config: `hermes/config.yaml.example` (sanitized, copy to `~/.hermes/config.yaml`) \
 Skills: `hermes/skills/` (placeholder, see `~/.hermes/skills/`) \
-Plugins: enabled list in `config.yaml.example` (`caveman-autostart`, `superpowers`, `gsd-core`, `rtk-rewrite`, etc) \
-RTK: install via `rtk` CLI (https://github.com/rtk-ai/rtk.git), not archived
+Plugins: enabled list in `config.yaml.example` (`caveman-autostart`, `superpowers`, `gsd-core`, `rtk-rewrite`, etc)
 
 Isolation: Hermes reads `~/.hermes/SOUL.md` and `~/.hermes/config.yaml` only. No `~/AGENTS.md` spill. Codex (`~/.codex/`) and Claude (`~/.claude/`) untouched.
 

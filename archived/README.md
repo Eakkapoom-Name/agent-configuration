@@ -451,8 +451,7 @@ ambiguous, stop and ask rather than guessing my intent.
 Global rules file: `hermes/SOUL.md` (always-loaded, every Hermes session, any cwd) \
 Config: `hermes/config.yaml.example` (sanitized, copy to `~/.hermes/config.yaml`) \
 Skills: `hermes/skills/` (placeholder, live skills in `~/.hermes/skills/`) \
-Plugins: `caveman-autostart`, `superpowers`, `gsd-core`, `rtk-rewrite`, `web/tavily`, `platforms/line`, etc (see `hermes/config.yaml.example`) \
-RTK: install via `rtk` CLI (https://github.com/rtk-ai/rtk.git), not archived
+Plugins: `caveman-autostart`, `superpowers`, `gsd-core`, `rtk-rewrite`, `web/tavily`, `platforms/line`, etc (see `hermes/config.yaml.example`)
 
 Isolation: Hermes reads `~/.hermes/SOUL.md` + `~/.hermes/config.yaml` only. No `~/AGENTS.md` spill. Codex (`~/.codex/`) and Claude (`~/.claude/`) untouched. SOUL.md migrates old `~/AGENTS.md` goldenrule into always-load.
 
